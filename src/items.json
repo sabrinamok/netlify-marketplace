@@ -1,32 +1,41 @@
 [
     {
        "id":1578176280,
-       "title":"Now Publishing With Netlify CMS!\r",
        "collection":"Will Jay\r",
-       "date":"January 05, 2020",
-       "time":"07:18",
-       "thumbnail":"/images/netlifyicon.png\r",
        "content":"We're now publishing remotely. Calling on all who would like to contribute to my blog!\r\n\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jsLUidiYm0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\r\n",
-       "price":"0.007 BNB"
+       "items":{
+           "name":"item one",
+           "image":"/images/netlifyicon.png\r",
+           "date":"January 05, 2020",
+            "time":"07:18",
+            "content":"We're now publishing remotely. Calling on all who would like to contribute to my blog!\r\n\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jsLUidiYm0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\r\n",
+            "price":"0.05 BNB"
+       }
     },
     {
        "id":1578019800,
-       "title":"This is a Test\r",
        "collection":"Will Jay\r",
-       "date":"January 03, 2020",
-       "time":"11:50",
-       "thumbnail":"/images/pumpbeerthumb.jpg\r",
-       "content":"\r\n# This is just a test post\r\n\r\n*Let's see what happens.*\r\n",
-       "price":"0.007 BNB"
+       "content":"We're now publishing remotely. Calling on all who would like to contribute to my blog!\r\n\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jsLUidiYm0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\r\n",
+       "items":{
+            "name":"item two",
+            "image":"/images/pumpbeerthumb.jpg\r",
+            "date":"January 03, 2020",
+            "time":"11:50",
+            "content":"We're now publishing remotely. Calling on all who would like to contribute to my blog!\r\n\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jsLUidiYm0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\r\n",
+            "price":"0.07 BNB"
+       }
     },
     {
-       "id":1578019800,
-       "title":"This is a Test\r",
-       "collection":"Will Jay\r",
-       "date":"January 03, 2020",
-       "time":"11:50",
-       "thumbnail":"/images/pumpbeerthumb.jpg\r",
-       "content":"\r\n# This is just a test post\r\n\r\n*Let's see what happens.*\r\n",
-       "price":"0.007 BNB"
+       "id":1578019801,
+       "collection":"John Doe",
+       "content":"We're now publishing remotely. Calling on all who would like to contribute to my blog!\r\n\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jsLUidiYm0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\r\n",
+       "items":{
+            "name":"item three",
+            "image":"/images/pumpbeerthumb.jpg\r",
+            "date":"January 01, 2020",
+            "time":"09:50",
+            "content":"We're now publishing remotely. Calling on all who would like to contribute to my blog!\r\n\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jsLUidiYm0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\r\n",
+            "price":"0.03 BNB"
+       }
     }
  ]
