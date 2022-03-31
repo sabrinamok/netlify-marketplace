@@ -133,18 +133,6 @@ function DiscoverSection(props) {
     },
   ];
 
-const collection = postlist.map(post => {
-  return post.collection
-})
-
-const price = postlist.map(post => {
-  return post.price
-})
-
-const excerptList = postlist.map(post => {
-  return post.content
-})
-
   return (
     <>
      <Section
@@ -172,7 +160,7 @@ const excerptList = postlist.map(post => {
                             gutterBottom={true}
                             className={classes.name}
                           >
-                            {collection[i]}
+                            {post.collection}
                           </Typography>
                           <Grid container={true} spacing={2} alignItems="center">
                             <Grid item={true} xs={12} sm={6} md={6}>
@@ -194,7 +182,7 @@ const excerptList = postlist.map(post => {
                                 color="primary"
                                 className={classes.price}
                               >
-                                {excerptList[i]}
+                                {post.content}
                               </Typography>
                             </Grid>
                           </Grid>
