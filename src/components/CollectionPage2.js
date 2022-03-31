@@ -65,7 +65,9 @@ function CollectionPage2(props) {
     },
   ];
 
+
   return (
+    <>
     <Section
       bgColor={props.bgColor}
       size={props.size}
@@ -157,6 +159,7 @@ function CollectionPage2(props) {
         </Grid>
       </Container>
     </Section>
+    </>
   );
 }
 
