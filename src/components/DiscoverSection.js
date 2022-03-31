@@ -171,7 +171,7 @@ function DiscoverSection(props) {
                                   color="textSecondary"
                                   className={classes.nftname}
                                 >
-                                  {post.items.name}
+                                  {post.title}
                               </Typography>
                             </Grid>
                             <Grid item={true} xs={12} sm={6} md={6} align="right">
