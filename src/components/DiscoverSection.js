@@ -142,7 +142,7 @@ const price = postlist.map(post => {
 })
 
 const excerptList = postlist.map(post => {
-  return post.content.split(" ").slice(0, 20).join(" ") + "..."
+  return post.content
 })
 
   return (
