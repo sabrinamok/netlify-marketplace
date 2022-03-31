@@ -84,6 +84,8 @@ const getPosts = () => {
                     time: parsedDate["time"],
                     thumbnail: metadata.thumbnail,
                     content: content ? content : "No content given",
+                    price: metadata.price ? metadata.price : "No price given",
+                    collection: metadata.collection ? metadata.collection : "No collection given",
                 }
                 postlist.push(post)
                 ilist.push(i)
