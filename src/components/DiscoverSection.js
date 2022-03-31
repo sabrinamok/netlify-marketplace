@@ -141,6 +141,10 @@ const price = postlist.map(post => {
   return post.price
 })
 
+const excerptList = postlist.map(post => {
+  return post.content.split(" ").slice(0, 20).join(" ") + "..."
+})
+
   return (
     <>
      <Section
@@ -190,7 +194,7 @@ const price = postlist.map(post => {
                                 color="primary"
                                 className={classes.price}
                               >
-                                {price[i]}
+                                {excerptList[i]}
                               </Typography>
                             </Grid>
                           </Grid>
