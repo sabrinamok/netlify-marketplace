@@ -19,28 +19,15 @@ collections:
       - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Price", name: "price", widget: "string"}
-      - name: sections
+      - name: items
         widget: list
         types:
-          - name: text_section
-            label: Text
+          - name: item_section
+            label: Add Item
             widget: object
             fields: 
-              - {name: text, widget: markdown}
-
-          - name: image_section
-            label: Image
-            widget: object
-            fields: 
+              - {name: name, widget: string}
               - {name: image, widget: image}
-              - {name: background-color, widget: select, options: [Dark, Medium, Light], required: false}
-
-
-          - name: slider_section
-            label: Slider
-            widget: object
-            fields:
-              - name: images  
-                widget: list
-                field: {label: Image, name: image, widget: image}
-              - {name: background-color, widget: select, options: [Dark, Medium, Light], required: false}
+              - {name: price, widget: string}
+              - {name: content, widget: markdown}
+              - {name: date, widget: datetime}
