@@ -182,7 +182,7 @@ function DiscoverSection(props) {
                                 color="primary"
                                 className={classes.price}
                               >
-                                {post.content}
+                                {post.price}
                               </Typography>
                             </Grid>
                           </Grid>
