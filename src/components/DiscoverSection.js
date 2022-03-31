@@ -12,12 +12,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import { Link } from "./../util/router";
+import postlist from "../posts.json"
+
 
 const useStyles = makeStyles((theme) => ({
   container: {
     maxWidth: "95%",
   },
   media: {
+    width:'100%',
+    objectFit:'cover',
     [theme.breakpoints.up("xs")]: {
       height: 170,
     },
@@ -129,7 +133,93 @@ function DiscoverSection(props) {
     },
   ];
 
+  const excerptList = postlist.map(post => {
+    return post.content.split(" ").slice(0, 20).join(" ") + "..."
+  })
+
   return (
+    <>
+     <Section
+      bgColor={props.bgColor}
+      size={props.size}
+      bgImage={props.bgImage}
+      bgImageOpacity={props.bgImageOpacity}
+    >
+      <Container className={classes.container}>
+        <SectionHeader title={props.title} subtitle={props.subtitle} size={4} />
+        <Grid container={true} spacing={4}>
+          {postlist.length && 
+              postlist.map((post, i) => {
+                return (
+                  <Grid key={i} className="post-card" item={true} xs={6} sm={6} md={3} lg={3}>
+                    <Card className={classes.card}>
+                      <CardActionArea component={Link} to={`/collection/${post.id}`}>
+                        <CardMedia>{post.thumbnail && <img src={post.thumbnail} className={classes.media}/>}</CardMedia>
+                        <CardContent>
+                          <Typography
+                            component={Link}
+                            to={`/collection/${post.id}`}
+                            variant="h3"
+                            color="textPrimary"
+                            gutterBottom={true}
+                            className={classes.name}
+                          >
+                            {post.collection}
+                          </Typography>
+                          <Grid container={true} spacing={2} alignItems="center">
+                            <Grid item={true} xs={12} sm={6} md={6}>
+                              <Typography
+                                  component={Link}
+                                  to={`/collection/${post.id}`}
+                                  variant="h3"
+                                  color="textSecondary"
+                                  className={classes.nftname}
+                                >
+                                  {post.nft}
+                              </Typography>
+                            </Grid>
+                            <Grid item={true} xs={12} sm={6} md={6} align="right">
+                              <Typography
+                                component={Link}
+                                to={`/collection/${post.id}`}
+                                variant="body2"
+                                color="primary"
+                                className={classes.price}
+                              >
+                                {post.price}
+                              </Typography>
+                            </Grid>
+                          </Grid>
+                          <Divider className={classes.divider} />
+                          <Grid container={true} spacing={2} alignItems="center">
+                            <Grid item={true} xs={12} sm={6} md={6} align="left">
+                              <Button
+                                component={Link}
+                                to={`/collection/${post.id}`}
+                                variant="contained"
+                                color="primary"
+                                size="small"
+                              >
+                                Bid
+                              </Button>
+                            </Grid>
+                            <Grid item={true} xs={12} sm={6} md={6} align="right">
+                              <Typography variant="body2" component="p">
+                                {post.date}
+                              </Typography>
+                            </Grid>
+                          </Grid>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </Grid>
+                )
+              })
+          }
+        </Grid>
+      </Container>
+    </Section>
+
     <Section
       bgColor={props.bgColor}
       size={props.size}
@@ -210,6 +300,7 @@ function DiscoverSection(props) {
         </Grid>
       </Container>
     </Section>
+    </>
   );
 }
 
