@@ -133,10 +133,6 @@ function DiscoverSection(props) {
     },
   ];
 
-  const excerptList = postlist.map(post => {
-    return post.content.split(" ").slice(0, 20).join(" ") + "..."
-  })
-
   return (
     <>
      <Section
@@ -175,7 +171,7 @@ function DiscoverSection(props) {
                                   color="textSecondary"
                                   className={classes.nftname}
                                 >
-                                  {post.nft}
+                                  {post.title}
                               </Typography>
                             </Grid>
                             <Grid item={true} xs={12} sm={6} md={6} align="right">
