@@ -151,7 +151,6 @@ const getCollections = () => {
                     thumbnail: metadata2.thumbnail,
                     price: metadata2.price ? metadata2.price : "No price given",
                     item: metadata2.item ? metadata2.item : "No item given",
-                    ongoing: metadata2.ongoing ? metadata2.ongoing : "",
                     content: content2 ? content2 : "No content given",
                 }
                 collectionlist.push(post2)
