@@ -141,8 +141,6 @@ const getCollections = () => {
                 const content2 = parseContent2({lines2,metadataIndices2})
                 const parsedDate2 = metadata.date ? formatDate(metadata.date) : new Date()
                 const publishedDate2 = `${parsedDate2["monthName"]} ${parsedDate2["day"]}, ${parsedDate2["year"]}`
-                const datestring2 = `${parsedDate2["year"]}-${parsedDate2["month"]}-${parsedDate2["day"]}T${parsedDate2["time"]}:00`
-                const date2 = new Date(datestring2)
                 post2 = {
                     id: i + 1,
                     title: metadata2.title ? metadata2.title : "No title given",
