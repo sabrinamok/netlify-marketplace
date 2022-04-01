@@ -103,8 +103,8 @@ const getPosts = () => {
     return 
 }
 
-const getCollections = async () => {
-    await fs.readdir(dirPathCollection,(err, files)=> {
+const getCollections = () => {
+    fs.readdir(dirPathCollection,(err, files)=> {
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
         }
@@ -145,6 +145,10 @@ const getCollections = async () => {
                     content: content2 ? content2 : "No content given",
                 }
                 collectionlist.push(post2)
+                if (i === files.length - 1){
+                    let data2 = JSON.stringify(collectionlist)
+                    fs.writeFileSync("src/collections.json" , data2)
+                }
             })
         })
     })
