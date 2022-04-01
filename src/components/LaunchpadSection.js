@@ -177,7 +177,7 @@ function LaunchpadSection(props) {
                       >
                         {post.ongoing}
                         {post.ongoing ? "Ongoing 🔥" : "Launched 🚀"}
-                        {Object.value(post.ongoing).state.value === 'true'? <div>Ongoing</div>: <div>Launch</div> }
+                        {Object.value(ongoing).state.value === 'true'? <div>Ongoing</div>: <div>Launch</div> }
                       </Typography>
                     </Grid>
                   </CardContent>
