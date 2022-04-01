@@ -122,8 +122,16 @@ function LaunchpadSection(props) {
       item: "555",
     },
   ];
-  const [value, setValue] = useState(0);
-  
+  const listItems = postlist.map((post, i) =>
+    {post.ongoing}
+  );
+
+  function EmailMessage(props) {
+    return listItems
+      ? 'Yes, yes it does.'
+      : 'No. Check back later';
+  }
+
   return (
     <Section
       bgColor={props.bgColor}
@@ -178,8 +186,7 @@ function LaunchpadSection(props) {
                       >
                         {post.ongoing}
                         {post.ongoing ? "Ongoing 🔥" : "Launched 🚀"}
-                        {value === true && (<div>Ongoing 🔥</div>)}
-                        {value ===false && (<div>Launched 🚀</div>)}
+                        <EmailMessage />
                       </Typography>
                     </Grid>
                   </CardContent>
