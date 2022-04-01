@@ -8,10 +8,11 @@ public_folder: "/images"
 
 collections:
   - name: "nft" # Used in routes, e.g., /admin/collections/blog
-    label: "Collection" # Used in the UI
-    folder: "collection" # The path to the folder where the documents are stored
+    label: "NFT" # Used in the UI
+    folder: "nft" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    sort: "date:desc" # Default is title:asc
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Collection", name: "collection", widget: "string"}
@@ -19,6 +20,7 @@ collections:
       - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Price", name: "price", widget: "string"}
+      - {label: "Collection", name: "collection", widget: "relation", collection: "collections", searchFields: ["title"], valueField: "title", displayFields: ["title"], required: false}
       - name: items
         widget: list
         types:
@@ -31,3 +33,13 @@ collections:
               - {name: price, widget: string}
               - {name: content, widget: markdown}
               - {name: date, widget: datetime}
+    - label: 'Collections'
+    name: 'collections'
+    folder: "collection" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: "Image", name: "thumbnail", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
