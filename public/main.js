@@ -139,9 +139,19 @@ const getCollections = () => {
                 const metadataIndices2 = lines2.reduce(getMetadataIndices2, [])
                 const metadata2 = parseMetadata2({lines2, metadataIndices2})
                 const content2 = parseContent2({lines2,metadataIndices2})
+                const parsedDate2 = metadata.date ? formatDate(metadata.date) : new Date()
+                const publishedDate2 = `${parsedDate2["monthName"]} ${parsedDate2["day"]}, ${parsedDate2["year"]}`
+                const datestring2 = `${parsedDate2["year"]}-${parsedDate2["month"]}-${parsedDate2["day"]}T${parsedDate2["time"]}:00`
+                const date2 = new Date(datestring2)
                 post2 = {
                     id: i + 1,
                     title: metadata2.title ? metadata2.title : "No title given",
+                    date: publishedDate2 ? publishedDate2 : "No date given",
+                    time: parsedDate2["time"],
+                    thumbnail: metadata2.thumbnail,
+                    price: metadata2.price ? metadata2.price : "No price given",
+                    item: metadata2.item ? metadata2.item : "No item given",
+                    ongoing: metadata2.ongoing ? metadata2.ongoing : "",
                     content: content2 ? content2 : "No content given",
                 }
                 collectionlist.push(post2)
