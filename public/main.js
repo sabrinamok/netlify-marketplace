@@ -138,21 +138,9 @@ const getCollections = () => {
                 const lines2 = contents.split("\n")
                 const metadataIndices2 = lines2.reduce(getMetadataIndices2, [])
                 const metadata2 = parseMetadata2({lines2, metadataIndices2})
-                const content2 = parseContent2((lines2,metadataIndices2))
-                post2 = {
-                    id: i + 1,
-                    title: metadata2.title ? metadata2.title : "No title given",
-                    content: content2 ? content2 : "No content given",
-                }
-                collectionlist.push(post2)
-                if (i === files.length - 1){
-                    let data = JSON.stringify(collectionlist)
-                    fs.writeFileSync("src/collections.json" , data)
-                }
             })
         })
     })
-    return
 }
 
 const getPages = () => {
