@@ -146,8 +146,8 @@ const getCollections = () => {
                 }
                 collectionlist.push(post2)
                 if (i === files.length - 1){
-                    let data2 = JSON.stringify(collectionlist)
-                    fs.writeFileSync("src/collections.json" , data2)
+                    let data = JSON.stringify(collectionlist)
+                    fs.writeFileSync("src/collections.json" , data)
                 }
             })
         })
