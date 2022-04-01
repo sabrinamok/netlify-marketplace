@@ -102,7 +102,7 @@ const getPosts = () => {
 }
 
 const getCollections = () => {
-    fs.readdir(dirPath, (err, files) => {
+    fs.readdir(dirPathCollections, (err, files) => {
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
         }
@@ -110,7 +110,7 @@ const getCollections = () => {
         files.forEach((file, i) => {
             let obj2 = {}
             let post2
-            fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
+            fs.readFile(`${dirPathCollections}/${file}`, "utf8", (err, contents) => {
                 const getMetadataIndices = (acc, elem, i) => {
                     if (/^---/.test(elem)) {
                         acc.push(i)
@@ -154,10 +154,10 @@ const getCollections = () => {
                 collectionlist.push(post2)
                 ilist2.push(i)
                 if (ilist2.length === files.length) {
-                    const sortedList = collection.sort ((a, b) => {
+                    const sortedList2 = collection.sort ((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
-                    let data2 = JSON.stringify(sortedList)
+                    let data2 = JSON.stringify(sortedList2)
                     fs.writeFileSync("src/collections.json", data2)
                 }
             })
