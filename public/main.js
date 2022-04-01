@@ -128,9 +128,17 @@ const getCollections = async () => {
                         return obj2
                     }
                 }
+                const parseContent2 = ({lines2, metadataIndices2} => {
+                    if (metadataIndices2.length > 0){
+                        lines2 = lines2.slice(metadataIndices2[1] + 1, 
+                        lines2.length)
+                    }
+                    return lines2.join("\n")
+                }
                 const lines2 = contents.split("\n")
                 const metadataIndices2 = lines2.reduce(getMetadataIndices2, [])
                 const metadata2 = parseMetadata2({lines2, metadataIndices2})
+                const content2 = parseContent2((lines2,metadataIndices2))
             })
         })
     })
