@@ -165,7 +165,7 @@ function CollectionsSection(props) {
                   className={classes.grid}
                 >
                   <Grid item={true} xs={3}>
-                    <Avatar src={item.image} />
+                    <Avatar src={post.thumbnail} />
                   </Grid>
                   <Grid item={true} xs={9}>
                     <Typography
