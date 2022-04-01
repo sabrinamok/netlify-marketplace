@@ -102,15 +102,15 @@ const getPosts = () => {
 }
 
 const getCollections = () => {
-    fs.readdir(dirPathCollections, (err, files) => {
+    fs.readdir(dirPathCollections, (err, files2) => {
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
         }
         let ilist2 = []
-        files.forEach((file, i) => {
+        files2.forEach((file, i) => {
             let obj2 = {}
             let post2
-            fs.readFile(`${dirPathCollections}/${file}`, "utf8", (err, contents) => {
+            fs.readFile(`${dirPathCollections}/${file}`, "utf8", (err, contents2) => {
                 const getMetadataIndices2 = (acc, elem, i) => {
                     if (/^---/.test(elem)) {
                         acc.push(i)
@@ -132,7 +132,7 @@ const getCollections = () => {
                     }
                     return lines2.join("\n")
                 }
-                const lines2 = contents.split("\n")
+                const lines2 = contents2.split("\n")
                 const metadataIndices2 = lines2.reduce(getMetadataIndices2, [])
                 const metadata2 = parseMetadata2({lines2, metadataIndices2})
                 const content2 = parseContent2({lines2, metadataIndices2})
@@ -153,7 +153,7 @@ const getCollections = () => {
                 }
                 collectionlist.push(post2)
                 ilist2.push(i)
-                if (ilist2.length === files.length) {
+                if (ilist2.length === files2.length) {
                     const sortedList2 = collection.sort ((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
