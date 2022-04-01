@@ -144,6 +144,11 @@ const getCollections = () => {
                     title: metadata2.title ? metadata2.title : "No title given",
                     content: content2 ? content2 : "No content given",
                 }
+                collectionlist.push(post2)
+                if (i === files.length - 1){
+                    let data = JSON.stringify(collectionlist)
+                    fs.writeFileSync("src/collections.json" , data)
+                }
             })
         })
     })
