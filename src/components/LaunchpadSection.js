@@ -139,7 +139,8 @@ function LaunchpadSection(props) {
         <Grid container={true} spacing={4}>
         {postlist.length && 
               postlist.map((post, i) => {
-                const ongoing = post.ongoing.state.true;
+                const ongoing = post.ongoing;
+                const status = ongoing.state.true;
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
               <Card className={classes.card}>
@@ -177,7 +178,7 @@ function LaunchpadSection(props) {
                         className={classes.nftname}
                       >
                         {post.ongoing}
-                        {ongoing ? "Ongoing 🔥" : "Launched 🚀"}
+                        {status ? "Ongoing 🔥" : "Launched 🚀"}
                       </Typography>
                     </Grid>
                   </CardContent>
