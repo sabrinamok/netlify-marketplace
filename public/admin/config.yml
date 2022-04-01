@@ -12,23 +12,24 @@ collections:
     folder: "nft" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    sort: "date:desc" # Default is title:asc
+    sort: "title:asc" # Default is title:asc
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Collection", name: "collection", widget: "string"}
+      - {label: "Launchpad", name: "launchpad", widget: "boolean", default: false}
+      - {label: "Ongoing", name: "ongoing", widget: "boolean", default: true}
       - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Price", name: "price", widget: "string"}
       - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: 'collections'
+    label: 'Collections'
+    folder: "collection" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    fields:
+      - {label: "Title", name: title, widget: string}
+      - {label: "Hot", name: "hot", widget: "boolean", default: false}
       - {label: "Price", name: "price", widget: "string"}
-      - name: items
-        widget: list
-        types:
-          - name: item_section
-            label: Add Item
-            widget: object
-            fields: 
-              - {name: name, widget: string}
-              - {name: image, widget: image}
-              - {name: price, widget: string}
-              - {name: content, widget: markdown}
-              - {name: date, widget: datetime}
+      - {label: "Body", name: "body", widget: "markdown"}
