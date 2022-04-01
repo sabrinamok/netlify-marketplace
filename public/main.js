@@ -102,23 +102,23 @@ const getPosts = () => {
 }
 
 const getCollections = () => {
-    fs.readdir(dirPathCollections, (err, files2) => {
+    fs.readdir(dirPath, (err, files) => {
         if (err) {
             return console.log("Failed to list contents of directory: " + err)
         }
         let ilist2 = []
-        files2.forEach((file, i) => {
+        files.forEach((file, i) => {
             let obj2 = {}
             let post2
-            fs.readFile(`${dirPathCollections}/${file}`, "utf8", (err, contents2) => {
-                const getMetadataIndices2 = (acc, elem, i) => {
+            fs.readFile(`${dirPath}/${file}`, "utf8", (err, contents) => {
+                const getMetadataIndices = (acc, elem, i) => {
                     if (/^---/.test(elem)) {
                         acc.push(i)
                     }
                     return acc
                 }
-                const parseMetadata2 = ({lines2, metadataIndices2}) => {
-                    if (metadataIndices2.length > 0) {
+                const parseMetadata = ({lines2, metadataIndices2}) => {
+                    if (metadataIndices.length > 0) {
                         let metadata2 = lines2.slice(metadataIndices2[0] + 1, metadataIndices2[1])
                         metadata2.forEach(line => {
                             obj2[line.split(": ")[0]] = line.split(": ")[1]
@@ -126,17 +126,17 @@ const getCollections = () => {
                         return obj2
                     }
                 }
-                const parseContent2 = ({lines2, metadataIndices2}) => {
+                const parseContent = ({lines2, metadataIndices2}) => {
                     if (metadataIndices2.length > 0) {
                         lines2 = lines2.slice(metadataIndices2[1] + 1, lines2.length)
                     }
                     return lines2.join("\n")
                 }
-                const lines2 = contents2.split("\n")
-                const metadataIndices2 = lines2.reduce(getMetadataIndices2, [])
-                const metadata2 = parseMetadata2({lines2, metadataIndices2})
-                const content2 = parseContent2({lines2, metadataIndices2})
-                const parsedDate2 = metadata2.date ? formatDate(metadata2.date) : new Date()
+                const lines2 = contents.split("\n")
+                const metadataIndices2 = lines.reduce(getMetadataIndices, [])
+                const metadata2 = parseMetadata({lines2, metadataIndices2})
+                const content2 = parseContent({lines2, metadataIndices2})
+                const parsedDate2 = metadata.date ? formatDate(metadata.date) : new Date()
                 const publishedDate2 = `${parsedDate2["monthName"]} ${parsedDate2["day"]}, ${parsedDate2["year"]}`
                 const datestring2 = `${parsedDate2["year"]}-${parsedDate2["month"]}-${parsedDate2["day"]}T${parsedDate2["time"]}:00`
                 const date2 = new Date(datestring2)
@@ -149,15 +149,15 @@ const getCollections = () => {
                     thumbnail: metadata2.thumbnail,
                     content: content2 ? content2 : "No content given",
                     price: metadata2.price ? metadata2.price : "No price given",
-                    hot: metadata2.hot ? metadata2.hot : ""
+                    collection: metadata2.collection ? metadata2.collection : "No collection given",
                 }
                 collectionlist.push(post2)
                 ilist2.push(i)
-                if (ilist2.length === files2.length) {
-                    const sortedList2 = collection.sort ((a, b) => {
+                if (ilist2.length === files.length) {
+                    const sortedList = collection.sort ((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
-                    let data2 = JSON.stringify(sortedList2)
+                    let data2 = JSON.stringify(sortedList)
                     fs.writeFileSync("src/collections.json", data2)
                 }
             })
