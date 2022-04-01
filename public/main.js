@@ -148,7 +148,7 @@ const getCollections = () => {
                     time: parsedDate2["time"],
                     thumbnail: metadata2.thumbnail,
                     price: metadata2.price ? metadata2.price : "No price given",
-                    items: metadata2.items ? metadata2.items : "No item given",
+                    items: metadata2.items ? metadata2.items : "",
                     content: content2 ? content2 : "No content given",
                 }
                 collectionlist.push(post2)
