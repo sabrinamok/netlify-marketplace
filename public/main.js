@@ -2,8 +2,10 @@ const path = require("path")
 const fs = require("fs")
 
 const dirPath = path.join(__dirname, "../nft")
+const dirPathCollection = path.join(__dirname, "../collection")
 const dirPathPages = path.join(__dirname, "../src/pages/content")
 let postlist = []
+let collectionlist = []
 let pagelist = []
 
 const months = {
@@ -101,6 +103,21 @@ const getPosts = () => {
     return 
 }
 
+const getCollections = async () => {
+    await fs.readdir(dirPath,(err, files)=> {
+        if (err) {
+            return console.log("Failed to list contents of directory: " + err)
+        }
+        files.forEach((file, i)=>{
+            let obj2 = {}
+            let post2
+            fs.readFile(`${dirPathCollection}/${file}`, "utf8", (err,contents)=> {
+                console.log(contents)
+            })
+        })
+    })
+}
+
 const getPages = () => {
     fs.readdir(dirPathPages, (err, files) => {
         if (err) {
@@ -122,4 +139,5 @@ const getPages = () => {
 }
 
 getPosts()
+getCollections()
 getPages()
