@@ -149,13 +149,12 @@ const getCollections = () => {
                     thumbnail: metadata2.thumbnail,
                     price: metadata2.price ? metadata2.price : "No price given",
                     items: metadata2.items ? metadata2.items : "",
-                    ongoing: metadata2.ongoing ? metadata2.ongoing : "",
+                    ongoing: metadata2.ongoing ? metadata2.ongoing : "launch",
                     hot: metadata2.hot ? metadata2.hot : "",
                     launchpad: metadata2.launchpad ? metadata2.launchpad : "",
                     content: content2 ? content2 : "No content given",
                 }
-                console.log(metadata2.ongoing)
-                
+
                 collectionlist.push(post2)
                 if (i === files.length - 1){
                     let data = JSON.stringify(collectionlist)
