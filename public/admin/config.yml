@@ -16,8 +16,6 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Collection", name: "collection", widget: "string"}
-      - {label: "Launchpad", name: "launchpad", widget: "boolean", default: false}
-      - {label: "Ongoing", name: "ongoing", widget: "boolean", default: true}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Price", name: "price", widget: "string"}
       - {label: "Image", name: "thumbnail", widget: "image"}
@@ -31,5 +29,9 @@ collections:
     fields:
       - {label: "Title", name: title, widget: string}
       - {label: "Hot", name: "hot", widget: "boolean", default: false}
+      - {label: "Launchpad", name: "launchpad", widget: "boolean", default: false}
+      - {label: "Ongoing", name: "ongoing", widget: "boolean", default: true}
       - {label: "Price", name: "price", widget: "string"}
+      - {label: "Items", name: "items", widget: "string"}
+      - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}

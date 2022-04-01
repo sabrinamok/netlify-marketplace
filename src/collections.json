@@ -1,0 +1,35 @@
+[
+   {
+      "id":1578176280,
+      "title":"Now Publishing With Netlify CMS!\r",
+      "items":"555",
+      "thumbnail":"/images/netlifyicon.png\r",
+      "content":"We're now publishing remotely. Calling on all who would like to contribute to my blog!\r\n\r\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jsLUidiYm0w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\r\n",
+      "price":"0.007 BNB",
+      "hot": true,
+      "ongoing":true,
+      "launchpad":true
+   },
+   {
+      "id":1578019800,
+      "title":"This is a Test\r",
+      "items":"888",
+      "thumbnail":"/images/pumpbeerthumb.jpg\r",
+      "content":"\r\n# This is just a test post\r\n\r\n*Let's see what happens.*\r\n",
+      "price":"0.007 BNB",
+      "hot": true,
+      "ongoing":false,
+      "launchpad":false
+   },
+   {
+      "id":1578019800,
+      "title":"This is a Test\r",
+      "items":"333",
+      "thumbnail":"/images/pumpbeerthumb.jpg\r",
+      "content":"\r\n# This is just a test post\r\n\r\n*Let's see what happens.*\r\n",
+      "price":"0.007 BNB",
+      "hot": false,
+      "ongoing":false,
+      "launchpad":false
+   }
+]
