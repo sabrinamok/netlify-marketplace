@@ -113,7 +113,6 @@ const getCollections = async () => {
             let post2
             fs.readFile(`${dirPathCollection}/${file}`, "utf8", (err,contents)=> {
                 const lines2 = contents.split("\n")
-                const metadataIndices2 = lines2.reduce(getMetadataIndices2, [])
             })
         })
     })
