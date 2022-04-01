@@ -154,6 +154,8 @@ const getCollections = () => {
                     launchpad: metadata2.launchpad ? metadata2.launchpad : "",
                     content: content2 ? content2 : "No content given",
                 }
+                console.log(metadata2.ongoing)
+                
                 collectionlist.push(post2)
                 if (i === files.length - 1){
                     let data = JSON.stringify(collectionlist)
