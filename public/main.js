@@ -148,7 +148,7 @@ const getCollections = () => {
                     time: parsedDate2["time"],
                     thumbnail: metadata2.thumbnail,
                     price: metadata2.price ? metadata2.price : "No price given",
-                    items: metadata2.items,
+                    items: metadata2.items ? metadata2.items : "",
                     ongoing: metadata2.ongoing ? metadata2.ongoing : "",
                     hot: metadata2.hot ? metadata2.hot : "",
                     launchpad: metadata2.launchpad ? metadata2.launchpad : "",
