@@ -141,7 +141,7 @@ function LaunchpadSection(props) {
               postlist.map((post, i) => {
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
-              <Card className={classes.card}>
+              {post.launchpad ? (<Card className={classes.card}>
                 <CardActionArea component={Link} to={`/launchpad/${post.id}`}>
                   <CardMedia>{post.thumbnail && <img src={post.thumbnail} className={classes.media}/>}</CardMedia>
                   <CardContent>
@@ -180,7 +180,8 @@ function LaunchpadSection(props) {
                     </Grid>
                   </CardContent>
                 </CardActionArea>
-              </Card>
+              </Card>) : null}
+              
             </Grid>
                 )
               })
