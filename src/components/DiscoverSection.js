@@ -149,7 +149,7 @@ function DiscoverSection(props) {
                 return (
                   <Grid key={i} className="post-card" item={true} xs={6} sm={6} md={3} lg={3}>
                     <Card className={classes.card}>
-                      <CardActionArea component={Link} to={`/collection/${post.id}`}>
+                      <CardActionArea component={Link} to={`/item/${post.id}`}>
                         <CardMedia>{post.thumbnail && <img src={post.thumbnail} className={classes.media}/>}</CardMedia>
                         <CardContent>
                           <Typography
@@ -166,7 +166,7 @@ function DiscoverSection(props) {
                             <Grid item={true} xs={12} sm={6} md={6}>
                               <Typography
                                   component={Link}
-                                  to={`/collection/${post.id}`}
+                                  to={`/item/${post.id}`}
                                   variant="h3"
                                   color="textSecondary"
                                   className={classes.nftname}
@@ -191,7 +191,7 @@ function DiscoverSection(props) {
                             <Grid item={true} xs={12} sm={6} md={6} align="left">
                               <Button
                                 component={Link}
-                                to={`/collection/${post.id}`}
+                                to={`/item/${post.id}`}
                                 variant="contained"
                                 color="primary"
                                 size="small"

@@ -44,7 +44,7 @@ function App(props) {
               component={CollectionPage}
             />
 
-            <Route exact path="/items" component={ItemsPage} />
+            <Route exact path="/item" component={ItemsPage} />
 
             <Route exact path="/profile/:section" component={ProfilePage} />
 
@@ -52,7 +52,7 @@ function App(props) {
 
             <Route
               exact
-              path="/launchpad-collection"
+              path="/launchpad/item"
               component={LaunchpadCollectionPage}
             />
 
