@@ -152,6 +152,7 @@ const getCollections = () => {
             })
         })
     })
+    return
 }
 
 const getPages = () => {
