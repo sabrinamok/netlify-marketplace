@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Section from "./Section";
 import HomeCollectionsHeader from "./HomeCollectionsHeader";
 import { Link } from "./../util/router";
+import postlist from "../collections.json"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -152,12 +153,14 @@ function CollectionsSection(props) {
           size={4}
         />
         <Grid container={true} spacing={3}>
-          {items.map((item, index) => (
-            <Grid item={true} xs={12} sm={6} md={3} lg={3} key={index}>
+        {postlist.length && 
+              postlist.map((post, i) => {
+                return (
+            <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
               <Card className={classes.card}>
                 <Grid
                   component={Link}
-                  to={item.url}
+                  to={`/collection/${post.id}`}
                   container={true}
                   className={classes.grid}
                 >
@@ -171,7 +174,7 @@ function CollectionsSection(props) {
                       gutterBottom={true}
                       className={classes.name}
                     >
-                      {item.title}
+                      {post.title}
                     </Typography>
                     <Typography
                       variant="h3"
@@ -179,13 +182,15 @@ function CollectionsSection(props) {
                       gutterBottom={true}
                       className={classes.price}
                     >
-                      {item.price}
+                      {post.price}
                     </Typography>
                   </Grid>
                 </Grid>
               </Card>
             </Grid>
-          ))}
+                )
+              })
+          }
         </Grid>
       </Container>
     </Section>
