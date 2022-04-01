@@ -20,7 +20,6 @@ collections:
       - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Price", name: "price", widget: "string"}
-      - {label: "Collection", name: "collection", widget: "relation", collection: "collections", searchFields: ["title"], valueField: "title", displayFields: ["title"], required: false}
       - name: items
         widget: list
         types:
