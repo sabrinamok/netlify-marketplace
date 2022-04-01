@@ -5,6 +5,7 @@ const dirPath = path.join(__dirname, "../nft")
 const dirPathCollections = path.join(__dirname, "../collection")
 const dirPathPages = path.join(__dirname, "../src/pages/content")
 let postlist = []
+let collectionlist = []
 let pagelist = []
 
 const months = {
@@ -90,7 +91,7 @@ const getPosts = () => {
                 postlist.push(post)
                 ilist.push(i)
                 if (ilist.length === files.length) {
-                    const sortedList = postlist.sort ((a, b) => {
+                    const sortedList = collection.sort ((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
                     let data = JSON.stringify(sortedList)
@@ -155,14 +156,14 @@ const getCollections = () => {
                     launchpad: metadata.launchpad ? metadata.launchpad : "",
                     hot: metadata.hot ? metadata.hot : ""
                 }
-                postlist.push(post)
+                collectionlist.push(post)
                 ilist.push(i)
                 if (ilist.length === files.length) {
                     const sortedList = postlist.sort ((a, b) => {
                         return a.id < b.id ? 1 : -1
                     })
                     let data = JSON.stringify(sortedList)
-                    fs.writeFileSync("src/posts.json", data)
+                    fs.writeFileSync("src/collections.json", data)
                 }
             })
         })
