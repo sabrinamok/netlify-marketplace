@@ -112,9 +112,9 @@ const getCollections = async () => {
             let obj2 = {}
             let post2
             fs.readFile(`${dirPathCollection}/${file}`, "utf8", (err,contents)=> {
-                const getMetadataIndices2 = (acc2, elem2, i) =>{
+                const getMetadataIndices2 = (acc2, elem2, i2) =>{
                     if (/^---/.test(elem2)) {
-                        acc2.push(i)
+                        acc2.push(i2)
                     }
                     return acc2
                 }
