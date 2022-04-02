@@ -149,7 +149,7 @@ const getCollections = () => {
                     thumbnail: metadata2.thumbnail,
                     price: metadata2.price ? metadata2.price : "No price given",
                     items: metadata2.items.toString(),
-                    ongoing: metadata2.ongoing ? metadata2.items.toString(Ongoing) : metadata2.items.toString(Launched),
+                    ongoing: metadata2.ongoing.toString() ? "Ongoing 🔥" : "Launched 🚀",
                     hot: metadata2.hot,
                     launchpad: metadata2.launchpad,
                     content: content2 ? content2 : "No content given",
