@@ -1,4 +1,5 @@
 ---
+order: 2
 title: collection 2
 hot: false
 launchpad: true

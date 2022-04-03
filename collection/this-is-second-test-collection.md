@@ -1,4 +1,5 @@
 ---
+order: 6
 title: this is test collection
 hot: false
 launchpad: true
