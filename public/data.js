@@ -1,5 +1,9 @@
 const homeContent = {
     title: 'Hello',
+    featuredCustom: [
+      '2',
+      '1',
+    ],
     featured: [
       '1',
       '2',

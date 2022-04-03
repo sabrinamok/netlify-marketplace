@@ -50,4 +50,11 @@ collections:
             collection: "collections"
             id_field: "id"
             display_template: "{{title}}"
-            hint: "this reorder widget display entries from `collections` collection."
+            hint: "this reorder widget display entries from collections collection."
+          - label: Featured Posts (Custom)
+            name: featuredCustom
+            widget: custom-reorder
+            collection: collections
+            id_field: id
+            display_template: '{{title}}'
+            hint: "this is a reorder widget with custom control"

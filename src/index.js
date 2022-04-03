@@ -33,7 +33,7 @@ const customReorderWidget = createWidget({
 })
 
 cms.registerWidget({
-  name: 'ncw-reorder',
+  name: 'custom-reorder',
   ...customReorderWidget,
 })
 
