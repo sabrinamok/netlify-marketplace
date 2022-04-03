@@ -70,8 +70,8 @@ collections:
       - {label: "Items", name: "items", widget: string}
       - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - label: Pages
-    name: pages
+  - name: 'pages'
+    label: 'Pages'
     files:
       - label: Home
         name: home
@@ -80,7 +80,6 @@ collections:
           - label: Title
             name: title
             widget: string
-
           - label: Featured Posts
             name: featured
             widget: ncw-reorder
@@ -89,8 +88,6 @@ collections:
             display_template: '{{title}}'
             hint: "this reorder widget display entries from `posts` collection."
             max_height: 200px 
-            
-
           - label: Featured Posts (Custom)
             name: featuredCustom
             widget: custom-reorder
