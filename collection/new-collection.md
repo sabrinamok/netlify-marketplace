@@ -1,4 +1,5 @@
 ---
+order: 4
 title: New collection
 hot: true
 launchpad: true
