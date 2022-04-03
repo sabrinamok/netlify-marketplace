@@ -27,6 +27,7 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: "frontmatter"
     fields:
+      - {label: "Order", name: "order", widget: "number"}
       - {label: "Title", name: title, widget: string}
       - {label: "Hot", name: "hot", widget: "boolean", default: false}
       - {label: "Launchpad", name: "launchpad", widget: "boolean", default: false}

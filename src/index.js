@@ -11,6 +11,7 @@ import {
 import cms from 'netlify-cms-app'
 import { createWidget } from '@ncwidgets/reorder'
 import { Widget as ReorderWidget } from '@ncwidgets/reorder'
+import { Widget as IdWidget } from '@ncwidgets/id'
 
 const ListComponent = ({ item }) => (
   <>
@@ -36,6 +37,7 @@ cms.registerWidget({
   name: 'custom-reorder',
   ...customReorderWidget,
 })
+cms.registerWidget(IdWidget)
 
 cms.registerWidget(ReorderWidget)
 cms.init()
