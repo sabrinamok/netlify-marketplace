@@ -1,38 +1,3 @@
-import cms from 'netlify-cms-app'
-import { Widget as ReorderWidget } from '@ncwidgets/reorder'
-import { createWidget } from '@ncwidgets/reorder'
-import { Widget as FileRelationWidget } from '@ncwidgets/file-relation'
-
-const ListComponent = ({ item }) => (
-  <>
-    <strong>{item.title}</strong>
-    <p style={{ margin: 0, color: '#798291', fontSize: '0.8rem' }}>{item.id}</p>
-  </>
-)
-
-const CustomReorderPreview = ({ items }) => (
-  <section>
-    <hr />
-    <p>Custom Widget Preview</p>
-    {items.map((item, i) => <p key={i}>{item.title}</p>)}
-  </section>
-)
-
-const customReorderWidget = createWidget({
-  renderControl: ({ value }) => <ListComponent item={value} />,
-  renderPreview: ({ value }) => <CustomReorderPreview items={value}/>,
-})
-
-cms.registerWidget(ReorderWidget)
-cms.registerWidget({
-  name: 'custom-reorder',
-  ...customReorderWidget,
-})
-
-cms.registerWidget(FileRelationWidget)
-
-cms.init()
-
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
@@ -79,4 +44,10 @@ collections:
         file: _data/_home.json
         fields:
           - {label: "Title", name: title, widget: string}
-          - {label: "Featured Posts", name: "featured", widget: "ncw-reorder", collection:"collections",id_field:"id"}
+          - label: "Featured Posts"
+            name: "featured"
+            widget: "ncw-reorder"
+            collection: "collections"
+            id_field: "id"
+            display_template: "{{title}}"
+            hint: "this reorder widget display entries from `posts` collection."
