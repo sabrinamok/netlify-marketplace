@@ -153,6 +153,7 @@ const getCollections = () => {
                     hot: metadata2.hot,
                     launchpad: metadata2.launchpad,
                     content: content2 ? content2 : "No content given",
+                    order: metadata2.order,
                 }
 
                 collectionlist.push(post2)
