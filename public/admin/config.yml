@@ -1,6 +1,7 @@
 import cms from 'netlify-cms-app'
 import { Widget as ReorderWidget } from '@ncwidgets/reorder'
 import { createWidget } from '@ncwidgets/reorder'
+import { Widget as FileRelationWidget } from '@ncwidgets/file-relation'
 
 const ListComponent = ({ item }) => (
   <>
@@ -27,6 +28,9 @@ cms.registerWidget({
   name: 'custom-reorder',
   ...customReorderWidget,
 })
+
+cms.registerWidget(FileRelationWidget)
+
 cms.init()
 
 backend:
@@ -57,10 +61,6 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: "frontmatter"
-    widget: ncw-reorder
-    collection: collections
-    id_field: id
-    display_template: '{{id}} | {{title}}'
     fields:
       - {label: "Title", name: title, widget: string}
       - {label: "Hot", name: "hot", widget: "boolean", default: false}
@@ -70,3 +70,31 @@ collections:
       - {label: "Items", name: "items", widget: string}
       - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - label: Pages
+    name: pages
+    files:
+      - label: Home
+        name: home
+        file: _data/_home.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+
+          - label: Featured Posts
+            name: featured
+            widget: ncw-reorder
+            collection: posts
+            id_field: id
+            display_template: '{{title}}'
+            hint: "this reorder widget display entries from `posts` collection."
+            max_height: 200px 
+            
+
+          - label: Featured Posts (Custom)
+            name: featuredCustom
+            widget: custom-reorder
+            collection: posts
+            id_field: id
+            display_template: '{{title}}'
+            hint: "this is a reorder widget with custom control"
