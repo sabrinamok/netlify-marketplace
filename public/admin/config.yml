@@ -1,3 +1,34 @@
+import cms from 'netlify-cms-app'
+import { Widget as ReorderWidget } from '@ncwidgets/reorder'
+import { createWidget } from '@ncwidgets/reorder'
+
+const ListComponent = ({ item }) => (
+  <>
+    <strong>{item.title}</strong>
+    <p style={{ margin: 0, color: '#798291', fontSize: '0.8rem' }}>{item.id}</p>
+  </>
+)
+
+const CustomReorderPreview = ({ items }) => (
+  <section>
+    <hr />
+    <p>Custom Widget Preview</p>
+    {items.map((item, i) => <p key={i}>{item.title}</p>)}
+  </section>
+)
+
+const customReorderWidget = createWidget({
+  renderControl: ({ value }) => <ListComponent item={value} />,
+  renderPreview: ({ value }) => <CustomReorderPreview items={value}/>,
+})
+
+cms.registerWidget(ReorderWidget)
+cms.registerWidget({
+  name: 'custom-reorder',
+  ...customReorderWidget,
+})
+cms.init()
+
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
@@ -26,6 +57,10 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: "frontmatter"
+    widget: ncw-reorder
+    collection: collections
+    id_field: id
+    display_template: '{{id}} | {{title}}'
     fields:
       - {label: "Title", name: title, widget: string}
       - {label: "Hot", name: "hot", widget: "boolean", default: false}
@@ -35,20 +70,3 @@ collections:
       - {label: "Items", name: "items", widget: string}
       - {label: "Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - name: settings
-    label: Settings
-    files:
-      - name: collectionOrder
-        label: Collection Order
-        file: src/utils/collectionOrder.md
-        fields:
-          - label: Collection
-            name: collection
-            widget: list
-            fields: 
-              - label: Collection Name 
-                name: collectionName 
-                widget: relation
-                collection: collections
-                searchFields: [title]
-                valueField: title
