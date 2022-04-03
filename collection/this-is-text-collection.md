@@ -1,5 +1,5 @@
 ---
-title: test collection
+title: this is test collection
 hot: true
 launchpad: true
 ongoing: false
