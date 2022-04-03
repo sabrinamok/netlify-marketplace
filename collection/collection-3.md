@@ -1,4 +1,5 @@
 ---
+order: 3
 title: collection 3
 hot: true
 launchpad: false
