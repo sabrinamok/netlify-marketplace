@@ -1,4 +1,5 @@
 ---
+order: 7
 title: test collection
 hot: true
 launchpad: true
