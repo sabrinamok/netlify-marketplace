@@ -1,4 +1,5 @@
 ---
+order: 1
 title: another collection
 hot: true
 launchpad: false
