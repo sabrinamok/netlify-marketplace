@@ -17,17 +17,16 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "95%",
   },
   media: {
+    width:'100%',
+    objectFit:'cover',
     [theme.breakpoints.up("xs")]: {
       height: 170,
     },
     [theme.breakpoints.up("sm")]: {
-      height: 170,
+      height: 220,
     },
     [theme.breakpoints.up("md")]: {
       height: 220,
-    },
-    [theme.breakpoints.between("md", "lg")]: {
-      height: 170,
     },
     [theme.breakpoints.up("lg")]: {
       height: 300,
