@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 4
 title: this is test collection
 user: austin_collector
 hot: false
