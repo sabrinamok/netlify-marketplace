@@ -1,5 +1,5 @@
 ---
-order: 4
+order: ""
 title: New collection
 user: moses_collector
 hot: true
