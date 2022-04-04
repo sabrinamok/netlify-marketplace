@@ -1,6 +1,7 @@
 ---
 order: 5
 title: this is test collection
+user: bryan_
 hot: true
 launchpad: true
 ongoing: false
