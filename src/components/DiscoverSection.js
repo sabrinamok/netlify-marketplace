@@ -134,7 +134,6 @@ function DiscoverSection(props) {
   ];
 
   return (
-    <>
      <Section
       bgColor={props.bgColor}
       size={props.size}
@@ -215,88 +214,6 @@ function DiscoverSection(props) {
         </Grid>
       </Container>
     </Section>
-
-    <Section
-      bgColor={props.bgColor}
-      size={props.size}
-      bgImage={props.bgImage}
-      bgImageOpacity={props.bgImageOpacity}
-    >
-      <Container className={classes.container}>
-        <SectionHeader title={props.title} subtitle={props.subtitle} size={4} />
-        <Grid container={true} spacing={4}>
-          {items.map((item, index) => (
-            <Grid item={true} xs={6} sm={6} md={3} lg={3} key={index}>
-              <Card className={classes.card}>
-                <CardActionArea component={Link} to={item.url}>
-                  <CardMedia
-                    image={item.image}
-                    title={item.name}
-                    className={classes.media}
-                  />
-                  <CardContent>
-                    <Typography
-                      component={Link}
-                      to={item.titleurl}
-                      variant="h3"
-                      color="textPrimary"
-                      gutterBottom={true}
-                      className={classes.name}
-                    >
-                      {item.title}
-                    </Typography>
-                    <Grid container={true} spacing={2} alignItems="center">
-                      <Grid item={true} xs={12} sm={6} md={6}>
-                        <Typography
-                          component={Link}
-                          to={item.url}
-                          variant="h3"
-                          color="textSecondary"
-                          className={classes.nftname}
-                        >
-                          {item.nftname}
-                        </Typography>
-                      </Grid>
-                      <Grid item={true} xs={12} sm={6} md={6} align="right">
-                        <Typography
-                          component={Link}
-                          to={item.url}
-                          variant="body2"
-                          color="primary"
-                          className={classes.price}
-                        >
-                          {item.price}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                    <Divider className={classes.divider} />
-                    <Grid container={true} spacing={2} alignItems="center">
-                      <Grid item={true} xs={12} sm={6} md={6} align="left">
-                        <Button
-                          component={Link}
-                          to={item.url}
-                          variant="contained"
-                          color="primary"
-                          size="small"
-                        >
-                          Bid
-                        </Button>
-                      </Grid>
-                      <Grid item={true} xs={12} sm={6} md={6} align="right">
-                        <Typography variant="body2" component="p">
-                          {item.time}
-                        </Typography>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Section>
-    </>
   );
 }
 
