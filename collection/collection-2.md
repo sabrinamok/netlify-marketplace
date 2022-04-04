@@ -1,6 +1,7 @@
 ---
 order: 2
 title: collection 2
+user: bryan_collector
 hot: false
 launchpad: true
 ongoing: false

@@ -1,6 +1,7 @@
 ---
 order: 4
 title: New collection
+user: moses_collector
 hot: true
 launchpad: true
 ongoing: true

@@ -1,6 +1,7 @@
 ---
 order: 3
 title: collection 3
+user: sab_collector
 hot: true
 launchpad: false
 ongoing: false
