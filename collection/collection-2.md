@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title: collection 2
 user: bryan_collector
 hot: false
