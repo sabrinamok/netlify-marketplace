@@ -1,5 +1,5 @@
 ---
-order: ""
+order: 1
 title: collection 3
 user: sab_collector
 hot: true
