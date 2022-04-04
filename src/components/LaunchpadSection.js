@@ -141,7 +141,7 @@ function LaunchpadSection(props) {
               postlist.sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
-              {post.launchpad ? (<Card className={classes.card}>
+              <Card className={classes.card}>
                 <CardActionArea component={Link} to={`/launchpad/item/${post.id}`}>
                   <CardMedia>{post.thumbnail && <img src={post.thumbnail} className={classes.media}/>}</CardMedia>
                   <CardContent>
@@ -151,7 +151,7 @@ function LaunchpadSection(props) {
                       className={classes.nftname}
                       gutterBottom={true}
                     >
-                      {post.title}
+                      {post.title} {post.launchpad}
                     </Typography>
                     <Grid container={true} spacing={2} alignItems="center">
                       <Grid item={true} xs={12} sm={6} md={6}>
@@ -180,8 +180,7 @@ function LaunchpadSection(props) {
                     </Grid>
                   </CardContent>
                 </CardActionArea>
-              </Card>) : null}
-              
+              </Card>
             </Grid>
                 )
               })

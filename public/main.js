@@ -152,7 +152,7 @@ const getCollections = () => {
                     items: metadata2.items,
                     ongoing: metadata2.ongoing,
                     hot: metadata2.hot,
-                    launchpad: metadata2.launchpad,
+                    launchpad: metadata2.launchpad.toString(),
                     content: content2 ? content2 : "No content given",
                     order: metadata2.order.toString(),
                 }
