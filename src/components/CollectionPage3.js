@@ -135,7 +135,7 @@ function CollectionPage3(props) {
         />
         <Grid container={true} spacing={4}>
         {postlist.length && 
-              postlist.sort((a,b) => (a.order===null)-(b.order===null) || +(a.order>b.order)||-(a.order<b.order)).map((post, i) => {
+              postlist.sort((a,b) => (b.order !== "") - (a.order !== "")|| a.order - b.order).map((post, i) => {
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
               <Card className={classes.card}>
@@ -161,7 +161,7 @@ function CollectionPage3(props) {
                       align="center"
                       gutterBottom={true}
                     >
-                      {post.title}{post.order}
+                      {post.title} ({post.order})
                     </Typography>
                     <Typography
                       variant="h3"
