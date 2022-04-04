@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     display: "block",
   },
+  sub:{
+    color:theme.palette.text.primary
+  }
 }));
 
 function CollectionPage3(props) {
@@ -142,12 +145,12 @@ function CollectionPage3(props) {
                     <Typography
                       component={Link}
                       variant="h3"
-                      color="textPrimary"
+                      color="primary"
                       gutterBottom={true}
                       className={classes.name}
                       align="center"
                     >
-                      {post.user}
+                      <span className={classes.sub}>by</span> {post.user}
                     </Typography>
                     <Typography
                       component={Link}
