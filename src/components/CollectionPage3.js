@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Section from "./Section";
 import CollectionSectionHeader from "./CollectionSectionHeader";
 import { Link } from "./../util/router";
+import postlist from "../collections.json"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -131,37 +132,34 @@ function CollectionPage3(props) {
           size={4}
         />
         <Grid container={true} spacing={4}>
-          {items.map((item, index) => (
-            <Grid item={true} xs={12} sm={6} md={3} lg={3} key={index}>
+        {postlist.length && 
+              postlist.map((post, i) => {
+                return (
+            <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
               <Card className={classes.card}>
-                <CardActionArea component={Link} to={item.url}>
-                  <CardMedia
-                    image={item.image}
-                    title={item.name}
-                    className={classes.media}
-                  />
+                <CardActionArea component={Link} to={`/collection/${post.id}`}>
+                  <CardMedia>{post.thumbnail && <img src={post.thumbnail} className={classes.media}/>}</CardMedia>
                   <CardContent>
                     <Typography
                       component={Link}
-                      to={item.userurl}
                       variant="h3"
                       color="textPrimary"
                       gutterBottom={true}
                       className={classes.name}
                       align="center"
                     >
-                      {item.user}
+                      {post.user}
                     </Typography>
                     <Typography
                       component={Link}
-                      to={item.url}
+                      to={`/collection/${post.id}`}
                       variant="h3"
                       color="textSecondary"
                       className={classes.nftname}
                       align="center"
                       gutterBottom={true}
                     >
-                      {item.collectionname}
+                      {post.title}
                     </Typography>
                     <Typography
                       variant="h3"
@@ -170,13 +168,15 @@ function CollectionPage3(props) {
                       className={classes.name}
                       align="center"
                     >
-                      {item.desc}
+                      {post.content}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
               </Card>
             </Grid>
-          ))}
+                )
+              })
+          }
         </Grid>
       </Container>
     </Section>
