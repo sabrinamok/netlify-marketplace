@@ -1,6 +1,7 @@
 ---
 order: 7
 title: test collection
+user: moses_collector
 hot: true
 launchpad: true
 ongoing: false
