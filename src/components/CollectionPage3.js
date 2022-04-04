@@ -161,7 +161,7 @@ function CollectionPage3(props) {
                       align="center"
                       gutterBottom={true}
                     >
-                      {post.title}
+                      {post.title}{post.order}
                     </Typography>
                     <Typography
                       variant="h3"
