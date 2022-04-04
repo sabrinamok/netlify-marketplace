@@ -8,39 +8,6 @@ import {
     useEthers,
     Config,
   } from '@usedapp/core'
-import cms from 'netlify-cms-app'
-import { createWidget } from '@ncwidgets/reorder'
-import { Widget as ReorderWidget } from '@ncwidgets/reorder'
-import { Widget as IdWidget } from '@ncwidgets/id'
-
-const ListComponent = ({ item }) => (
-  <>
-    <strong>{item.title}</strong>
-    <p style={{ margin: 0, color: '#798291', fontSize: '0.8rem' }}>{item.id}</p>
-  </>
-)
-
-const CustomReorderPreview = ({ items }) => (
-  <section>
-    <hr />
-    <p>Custom Widget Preview</p>
-    {items.map((item, i) => <p key={i}>{item.title}</p>)}
-  </section>
-)
-
-const customReorderWidget = createWidget({
-  renderControl: ({ value }) => <ListComponent item={value} />,
-  renderPreview: ({ value }) => <CustomReorderPreview items={value}/>,
-})
-
-cms.registerWidget({
-  name: 'custom-reorder',
-  ...customReorderWidget,
-})
-cms.registerWidget(IdWidget)
-
-cms.registerWidget(ReorderWidget)
-cms.init()
   
   const config: Config = {
     readOnlyChainId: Mainnet.chainId,

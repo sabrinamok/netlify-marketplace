@@ -145,7 +145,7 @@ function DiscoverSection(props) {
         <SectionHeader title={props.title} subtitle={props.subtitle} size={4} />
         <Grid container={true} spacing={4}>
           {postlist.length && 
-              postlist.sort((a,b) => a.title - b.title).map((post, i) => {
+              postlist.sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
                 return (
                   <Grid key={i} className="post-card" item={true} xs={6} sm={6} md={3} lg={3}>
                     <Card className={classes.card}>
