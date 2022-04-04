@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 6
 title: latest collection
 user: austin__
 hot: true
