@@ -176,7 +176,7 @@ function LaunchpadSection(props) {
                         color="textSecondary"
                         className={classes.nftname}
                       >
-                        {post.ongoing ? "Ongoing 🔥" : "Launched 🚀"}
+                        {post.ongoing === "true" ? "Ongoing 🔥" : "Launched 🚀"}
                       </Typography>
                     </Grid>
                   </CardContent>
