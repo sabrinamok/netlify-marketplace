@@ -8,7 +8,8 @@
       "price":"3.00 BNB",
       "hot": true,
       "ongoing":false,
-      "launchpad":true
+      "launchpad":true,
+      "user":"sab"
    },
    {
       "id":2,
@@ -19,6 +20,7 @@
       "price":"2.00 BNB",
       "hot": false,
       "ongoing":true,
-      "launchpad":true
+      "launchpad":true,
+      "user":"sab"
    }
 ]

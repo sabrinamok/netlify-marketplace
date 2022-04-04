@@ -29,6 +29,7 @@ collections:
     fields:
       - {label: "Order", name: "order", widget: "number"}
       - {label: "Title", name: title, widget: string}
+      - {label: "User", name: user, widget: string}
       - {label: "Hot", name: "hot", widget: "boolean", default: false}
       - {label: "Launchpad", name: "launchpad", widget: "boolean", default: false}
       - {label: "Ongoing", name: "ongoing", widget: "boolean", default: true}

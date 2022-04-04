@@ -144,6 +144,7 @@ const getCollections = () => {
                 post2 = {
                     id: i + 1,
                     title: metadata2.title ? metadata2.title : "No title given",
+                    title: metadata2.user ? metadata2.user : "No user given",
                     date: publishedDate2 ? publishedDate2 : "No date given",
                     time: parsedDate2["time"],
                     thumbnail: metadata2.thumbnail,
