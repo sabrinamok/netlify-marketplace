@@ -1,5 +1,5 @@
 ---
-order: 7
+order: ""
 title: test collection
 user: moses_collector
 hot: true
