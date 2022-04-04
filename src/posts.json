@@ -1,6 +1,6 @@
 [
    {
-      "id":1578176280,
+      "id":1,
       "title":"Now Publishing With Netlify CMS!\r",
       "collection":"Will Jay\r",
       "date":"January 05, 2020",
@@ -10,7 +10,7 @@
       "price":"0.007 BNB"
    },
    {
-      "id":1578019800,
+      "id":2,
       "title":"This is a Test\r",
       "collection":"Will Jay\r",
       "date":"January 03, 2020",
@@ -20,7 +20,7 @@
       "price":"0.007 BNB"
    },
    {
-      "id":1578019800,
+      "id":3,
       "title":"This is a Test\r",
       "collection":"Will Jay\r",
       "date":"January 03, 2020",
