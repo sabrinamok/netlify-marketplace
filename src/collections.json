@@ -23,7 +23,7 @@
       "ongoing":true,
       "launchpad":true,
       "user":"sab",
-      "order":2
+      "order":""
    },
    {
       "id":3,
@@ -36,6 +36,6 @@
       "ongoing":true,
       "launchpad":false,
       "user":"moses_collector",
-      "order":3
+      "order":2
    }
 ]
