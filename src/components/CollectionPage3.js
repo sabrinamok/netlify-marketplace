@@ -170,7 +170,7 @@ function CollectionPage3(props) {
                       className={classes.name}
                       align="center"
                     >
-                      {post.content.substring(0, 200)+"..."}
+                      {post.content.substring(0, 100)+"..."}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
