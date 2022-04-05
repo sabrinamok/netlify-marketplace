@@ -10,7 +10,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Section from "./Section";
 import CollectionSectionHeader from "./CollectionSectionHeader";
 import { Link } from "./../util/router";
-import postlist from "../collections.json"
+import postlist from "../collections.json";
+import Markdown from "react-markdown";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -119,6 +120,10 @@ function CollectionPage3(props) {
       desc: "Polychain Monsters are beautifully animated digital collectibles with varying scarcities. Each Polymon is backed by a truly unique NFT and can be unpacked with $PMON tokens.",
     },
   ];
+
+  const excerptList = postlist.map(post => {
+    return post.content.split(" ").slice(0, 20).join(" ") + "..."
+})
   
   return (
     <Section
@@ -170,7 +175,7 @@ function CollectionPage3(props) {
                       className={classes.name}
                       align="center"
                     >
-                      {post.content}
+                      <Markdown source={excerptList[i]} escapeHtml={false} />
                     </Typography>
                   </CardContent>
                 </CardActionArea>
