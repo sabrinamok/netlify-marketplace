@@ -17,16 +17,17 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "95%",
   },
   media: {
-    width:'100%',
-    objectFit:'cover',
     [theme.breakpoints.up("xs")]: {
       height: 170,
     },
     [theme.breakpoints.up("sm")]: {
-      height: 220,
+      height: 170,
     },
     [theme.breakpoints.up("md")]: {
       height: 220,
+    },
+    [theme.breakpoints.between("md", "lg")]: {
+      height: 170,
     },
     [theme.breakpoints.up("lg")]: {
       height: 300,
@@ -136,10 +137,7 @@ function LaunchpadSection2(props) {
           size={4}
         />
         <Grid container={true} spacing={4}>
-        {postlist.length && 
-              postlist.sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
-                if (post.launchpad === "true") {
-                return (
+          {items.map((item, index) => (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={index}>
               <Card className={classes.card}>
                 <CardActionArea component={Link} to={item.url}>
@@ -186,9 +184,7 @@ function LaunchpadSection2(props) {
                 </CardActionArea>
               </Card>
             </Grid>
-                )}
-              })
-          }
+          ))}
         </Grid>
       </Container>
     </Section>
