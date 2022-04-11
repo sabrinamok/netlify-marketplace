@@ -140,6 +140,7 @@ function LaunchpadSection(props) {
         {postlist.length && 
               postlist.sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
                 if (post.launchpad === "true") {
+                  if (i < 3) {
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
               <Card className={classes.card}>
@@ -183,7 +184,7 @@ function LaunchpadSection(props) {
                 </CardActionArea>
               </Card>
             </Grid>
-                )}
+                )}}
               })
           }
         </Grid>
