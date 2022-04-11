@@ -155,7 +155,7 @@ function CollectionsSection(props) {
         />
         <Grid container={true} spacing={3}>
         {postlist.length && 
-              postlist.filter((e, i) => i < 3).sort((a,b) => (b.order !== "") - (a.order !== "")|| a.order - b.order).map((post, i) => {
+              postlist.sort((a,b) => (b.order !== "") - (a.order !== "")|| a.order - b.order).map((post, i) => {
                 if (post.hot === "true") {
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>

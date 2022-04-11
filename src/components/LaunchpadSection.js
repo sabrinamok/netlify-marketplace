@@ -138,7 +138,7 @@ function LaunchpadSection(props) {
         />
         <Grid container={true} spacing={4}>
         {postlist.length && 
-              postlist.slice(3).sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
+              postlist.sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
                 if (post.launchpad === "true") {
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
