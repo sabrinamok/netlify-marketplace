@@ -123,6 +123,11 @@ function LaunchpadSection(props) {
     },
   ];
 
+  this.state = {
+    min: 0,
+    max: 4,
+  };
+
   return (
     <Section
       bgColor={props.bgColor}
@@ -139,7 +144,7 @@ function LaunchpadSection(props) {
         <Grid container={true} spacing={4}>
         {postlist.length && 
               postlist.sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
-                if (post.launchpad === "true") {
+                if ((post.launchpad === "true") && (i >= this.state.min && i <= this.state.max)) {
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
               <Card className={classes.card}>
