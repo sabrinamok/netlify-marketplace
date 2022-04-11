@@ -17,17 +17,16 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "95%",
   },
   media: {
+    width:'100%',
+    objectFit:'cover',
     [theme.breakpoints.up("xs")]: {
       height: 170,
     },
     [theme.breakpoints.up("sm")]: {
-      height: 170,
+      height: 220,
     },
     [theme.breakpoints.up("md")]: {
       height: 220,
-    },
-    [theme.breakpoints.between("md", "lg")]: {
-      height: 170,
     },
     [theme.breakpoints.up("lg")]: {
       height: 300,
@@ -137,15 +136,14 @@ function LaunchpadSection2(props) {
           size={4}
         />
         <Grid container={true} spacing={4}>
-          {items.map((item, index) => (
-            <Grid item={true} xs={12} sm={6} md={3} lg={3} key={index}>
+        {postlist.length && 
+              postlist.sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
+                if (post.launchpad === "true") {
+                return (
+            <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
               <Card className={classes.card}>
-                <CardActionArea component={Link} to={item.url}>
-                  <CardMedia
-                    image={item.image}
-                    title={item.name}
-                    className={classes.media}
-                  />
+                <CardActionArea component={Link} to={`/launchpad/item/${post.id}`}>
+                  <CardMedia>{post.thumbnail && <img src={post.thumbnail} className={classes.media}/>}</CardMedia>
                   <CardContent>
                     <Typography
                       variant="h3"
@@ -153,12 +151,12 @@ function LaunchpadSection2(props) {
                       className={classes.nftname}
                       gutterBottom={true}
                     >
-                      {item.collectionname}
+                      {post.title} {post.launchpad}
                     </Typography>
                     <Grid container={true} spacing={2} alignItems="center">
                       <Grid item={true} xs={12} sm={6} md={6}>
                         <Typography color="primary" className={classes.price}>
-                          {item.price}
+                          {post.price}
                         </Typography>
                       </Grid>
                       <Grid item={true} xs={12} sm={6} md={6}>
@@ -167,7 +165,7 @@ function LaunchpadSection2(props) {
                           className={classes.price}
                           align="right"
                         >
-                          {item.item} items
+                          {post.items} items
                         </Typography>
                       </Grid>
                     </Grid>
@@ -177,14 +175,16 @@ function LaunchpadSection2(props) {
                         color="textSecondary"
                         className={classes.nftname}
                       >
-                        {item.status} 🔥
+                        {post.ongoing === "true" ? "Ongoing 🔥" : "Launched 🚀"}
                       </Typography>
                     </Grid>
                   </CardContent>
                 </CardActionArea>
               </Card>
             </Grid>
-          ))}
+                )}
+              })
+          }
         </Grid>
       </Container>
     </Section>
