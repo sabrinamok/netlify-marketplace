@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Section from "./Section";
 import LaunchpadSectionHeader from "./LaunchpadSectionHeader";
 import { Link } from "./../util/router";
+import postlist from "../collections.json"
 
 const useStyles = makeStyles((theme) => ({
   container: {
