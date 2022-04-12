@@ -123,6 +123,8 @@ function LaunchpadSection(props) {
     },
   ];
 
+  let newPostlist = postlist.slice(0, 3);
+
   return (
     <Section
       bgColor={props.bgColor}
@@ -137,8 +139,8 @@ function LaunchpadSection(props) {
           size={4}
         />
         <Grid container={true} spacing={4}>
-        {postlist.length && 
-              postlist.sort((a, b) => a.title.localeCompare(b.title)).splice(3).map((post, i) => {
+        {newPostlist.length && 
+              newPostlist.sort((a, b) => a.title.localeCompare(b.title)).map((post, i) => {
                 if (post.launchpad === "true") {
                 return (
             <Grid item={true} xs={12} sm={6} md={3} lg={3} key={i}>
